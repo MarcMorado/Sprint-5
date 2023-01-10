@@ -1,14 +1,22 @@
-var chistes: object[];
+let chistes: { joke: string; score: number }[] = [];
 
-
-function chiste() {
-  fetch("https://icanhazdadjoke.com/", {
+async function getChiste() {
+  let response = await fetch("https://icanhazdadjoke.com/", {
     method: "GET",
     headers: { Accept: "application/json" },
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-  chistes.push();
-  console.log(chistes);
-  
+  });
+
+  return response.json();
+  // console.log('response ', response);
+  // console.log('data ', data);
+  // console.log('error ', errors);
+
+  // console.log(chistes);
+}
+
+async function chiste() {
+  getChiste().then((data) => {
+    chistes.push({ joke:data.joke, score: 1 });
+  });
+  console.log("caca", chistes);
 }
