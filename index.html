@@ -32,17 +32,30 @@
     />
     <!-- Core theme CSS (includes Bootstrap)-->
   </head>
-  <body
-  >
-    <div class="card shadow">
-      <div>
-        <button
-          type="button"
-          class="btn btn-primary btn-r-2 s-5 e-5"
-          onclick="chiste()"
-        >
-          Següent acudit
-        </button>
+  <body>
+    <div class="bg">
+      <div class="container">
+        <img src="/images/bg_blob_1.svg" alt="" />
+        <div class="card d-flex justify-content-center">
+          <h1>Preparat per riure?</h1>
+          <h5 id="jokeTxt"></h5>
+          <div>
+            <button type="button" class="btn btn-primary" onclick="points(1)">
+              1
+            </button>
+            <button type="button" class="btn btn-primary" onclick="points(2)">
+              2
+            </button>
+            <button type="button" class="btn btn-primary" onclick="points(3)">
+              3
+            </button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary" onclick="chiste()">
+              Següent acudit
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Bootstrap core JS-->

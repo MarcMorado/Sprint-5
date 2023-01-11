@@ -8,25 +8,66 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-let chistes = [];
-function getChiste() {
+let reportJokes = [];
+let checker = 0;
+let today = new Date().toISOString();
+function getDad() {
     return __awaiter(this, void 0, void 0, function* () {
         let response = yield fetch("https://icanhazdadjoke.com/", {
             method: "GET",
             headers: { Accept: "application/json" },
         });
         return response.json();
-        // console.log('response ', response);
-        // console.log('data ', data);
-        // console.log('error ', errors);
-        // console.log(chistes);
+    });
+}
+function getNorris() {
+    return __awaiter(this, void 0, void 0, function* () {
+        let response = yield fetch("https://api.chucknorris.io/jokes/random", {
+            method: "GET",
+            headers: { Accept: "application/json" },
+        });
+        return response.json();
     });
 }
 function chiste() {
     return __awaiter(this, void 0, void 0, function* () {
-        getChiste().then((data) => {
-            chistes.push({ joke: data.joke, score: 1 });
-        });
-        console.log("caca", chistes);
+        const rndInt = Math.floor(Math.random() * 2) + 1;
+        if (rndInt === 1) {
+            getDad().then((data) => {
+                reportJokes.push({ joke: data.joke, score: 0, date: today });
+                document.getElementById("jokeTxt").textContent =
+                    data.joke;
+            });
+            console.log("Dad joke", reportJokes);
+        }
+        else {
+            getNorris().then((data) => {
+                reportJokes.push({ joke: data.value, score: 0, date: today });
+                document.getElementById("jokeTxt").textContent =
+                    data.value;
+            });
+            console.log("Norris joke", reportJokes);
+        }
+        checker += 1;
     });
 }
+function points(num) {
+    switch (num) {
+        case 1:
+            reportJokes[checker - 1].score = 1;
+            break;
+        case 2:
+            reportJokes[checker - 1].score = 2;
+            break;
+        case 3:
+            reportJokes[checker - 1].score = 3;
+            break;
+    }
+    console.log(reportJokes);
+}
+// window.onload = function holis() {
+//   getNorris().then((data) => {
+//     reportJokes.push({ joke: data.value, score: 0, date: today });
+//   });
+//   console.log("Dad joke", reportJokes);
+// };
