@@ -23,6 +23,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!-- CustomStyle -->
+    <link rel="stylesheet" href="/css/customStyle.css" />
+
     <!-- Bootstrap icons-->
     <link
       rel="stylesheet"
@@ -34,26 +38,35 @@
   </head>
   <body>
     <div class="bg">
+      <div class="card border-0">
+        <div id="weather"></div>
+      </div>
       <div class="container">
-        <img src="/images/bg_blob_1.svg" alt="" />
-        <div class="card d-flex justify-content-center">
-          <h1>Preparat per riure?</h1>
-          <h5 id="jokeTxt"></h5>
-          <div>
-            <button type="button" class="btn btn-primary" onclick="points(1)">
-              1
-            </button>
-            <button type="button" class="btn btn-primary" onclick="points(2)">
-              2
-            </button>
-            <button type="button" class="btn btn-primary" onclick="points(3)">
-              3
-            </button>
-          </div>
-          <div>
-            <button type="button" class="btn btn-primary" onclick="chiste()">
-              Següent acudit
-            </button>
+        <div class="row row-cols-1">
+          <div class="card border-0 text-center">
+            <img src="/images/bg_blob_1.svg" alt="" class="bg-image" />
+            <h1 class="topSide">Preparat per riure?</h1>
+            <h5 class="topSide jkText w-25" id="jokeTxt"></h5>
+            <div id="hideDiv">
+              <button type="button" class="btn topSide" onclick="points(1)">
+                <img src="/images/emoji-frown.svg" class="emoji-size" alt="" />
+              </button>
+              <button type="button" class="btn topSide" onclick="points(2)">
+                <img src="/images/emoji-neutral.svg" class="emoji-size" alt="" />
+              </button>
+              <button type="button" class="btn topSide" onclick="points(3)">
+                <img src="/images/emoji-laughing.svg" class="emoji-size" alt="" />
+              </button>
+            </div>
+            <div class="pt-2">
+              <button
+                type="button"
+                class="btn btn-default p-2 btn-dark topSide"
+                onclick="chiste() + btnShow()"
+              >
+                Següent acudit
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -64,8 +77,8 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
-    <!-- TypeScript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- Script -->
     <script src="typescript-project/index.js"></script>
   </body>
 </html>

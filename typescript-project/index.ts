@@ -1,6 +1,6 @@
 let reportJokes: { joke: string; score: number; date: string }[] = [];
 let checker: number = 0;
-let today = new Date().toISOString();
+
 
 ///// GET APIS /////
 async function getDad() {
@@ -31,6 +31,7 @@ async function getWeather() {
 
 ///// PRINT JOKE /////
 async function chiste() {
+  let today = new Date().toISOString();
   const rndInt = Math.floor(Math.random() * 2) + 1;
   if (rndInt === 1) {
     getDad().then((data) => {
@@ -66,10 +67,24 @@ function points(num: number) {
   console.log(reportJokes);
 }
 
-window.onload = function holis() {
+///// WEATHER /////
+window.onload = function printWeather() {
   getWeather().then((data) => {
-
+    (document.getElementById("weather") as HTMLElement).textContent =
+      "Hoy: " + data.stateSky.description + " " + data.temperatura_actual + "ºC";
   });
 };
 
-///https://www.el-tiempo.net/api/json/v1/provincias/08/municipios/08019/weather
+///// Show Score Btns /////
+function btnShow(){
+  $('#hideDiv').show();
+}
+
+
+// for(var i=1;i<11;i++){
+//   var img = new Image();
+//   img.onload = function(){ if(this.width != 0){
+//    document.getElementById('myDiv').appendChild(this);
+//   }};
+//   img.src = "images/image-"+category+"-"+i+".jpg";
+//  };
