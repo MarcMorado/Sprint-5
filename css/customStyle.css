@@ -43,16 +43,15 @@ body {
 }
 
 .mini-blob-1 {
-  position: absolute;
-  bottom: 200px;
-  right: 1300px;
+  position: relative;
+  bottom: 350px;
   width: 20%;
 }
 
 .mini-blob-2 {
-  position:absolute;
+  position:relative;
   bottom: 750px;
-  left: 1300px;
+  left: 700px;
   width: 20%;
 }
 
