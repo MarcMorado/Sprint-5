@@ -8,7 +8,7 @@ body {
 .bg-image {
   position: relative;
   top: 20px;
-  left: 50px;
+  left: 80px;
   width: 1000px;
 }
 .btn-default {
@@ -22,11 +22,15 @@ body {
   cursor: pointer;
 }
 
-.emoji-size{
- width: 30px;
- background-image: linear-gradient(120deg, rgb(218, 183, 85) 0%, rgb(249, 233, 95) 100.2%);
- border-radius: 25px;
- cursor: pointer;
+.emoji-size {
+  width: 30px;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 208, 53, 0.75) 0%,
+    rgb(249, 233, 95) 100.2%
+  );
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 .topSide {
@@ -38,6 +42,46 @@ body {
   left: 420px;
 }
 
+.mini-blob-1 {
+  position: absolute;
+  bottom: 200px;
+  right: 1300px;
+  width: 20%;
+}
+
+.mini-blob-2 {
+  position:absolute;
+  bottom: 750px;
+  left: 1300px;
+  width: 20%;
+}
+
+#weather {
+  position: relative;
+  top: 6px;
+}
+
 #hideDiv {
   display: none;
+}
+
+#despejado {
+  display: none;
+  width: 60px;
+}
+#pocoNuboso {
+  display: none;
+  width: 60px;
+}
+#cubierto {
+  display: none;
+  width: 60px;
+}
+#lluvia {
+  display: none;
+  width: 60px;
+}
+#niebla {
+  display: none;
+  width: 60px;
 }

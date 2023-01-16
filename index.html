@@ -38,10 +38,22 @@
   </head>
   <body>
     <div class="bg">
+      <!-- weather -->
       <div class="card border-0">
-        <div id="weather"></div>
+        <div clas="row">
+          <div class="row row-cols-5 ps-4 pt-3">
+            <img src="/images/Despejado.svg" id="despejado" alt="" />
+            <img src="/images/Poco nuboso.svg" id="pocoNuboso" alt="" />
+            <img src="/images/Cubierto.svg" id="cubierto" alt="" />
+            <img src="/images/Lluvia.svg" id="lluvia" alt="" />
+            <img src="/images/Niebla.svg" id="niebla" alt="" />
+            <h5 id="weather"></h5>
+          </div>
+        </div>
       </div>
+      <!-- jokes -->
       <div class="container">
+        
         <div class="row row-cols-1">
           <div class="card border-0 text-center">
             <img src="/images/bg_blob_1.svg" alt="" class="bg-image" />
@@ -52,10 +64,18 @@
                 <img src="/images/emoji-frown.svg" class="emoji-size" alt="" />
               </button>
               <button type="button" class="btn topSide" onclick="points(2)">
-                <img src="/images/emoji-neutral.svg" class="emoji-size" alt="" />
+                <img
+                  src="/images/emoji-neutral.svg"
+                  class="emoji-size"
+                  alt=""
+                />
               </button>
               <button type="button" class="btn topSide" onclick="points(3)">
-                <img src="/images/emoji-laughing.svg" class="emoji-size" alt="" />
+                <img
+                  src="/images/emoji-laughing.svg"
+                  class="emoji-size"
+                  alt=""
+                />
               </button>
             </div>
             <div class="pt-2">
@@ -69,6 +89,10 @@
             </div>
           </div>
         </div>
+        <div>
+          <img class='mini-blob-1' src="/images/side_blob_1.svg" alt="">
+          <img class='mini-blob-2' src="/images/side_blob_2.svg" alt="">
+        </div>
       </div>
     </div>
     <!-- Bootstrap core JS-->
@@ -79,6 +103,6 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!-- Script -->
-    <script src="typescript-project/index.js"></script>
+    <script src="typescript-project/jokes.js"></script>
   </body>
 </html>
